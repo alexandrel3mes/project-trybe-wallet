@@ -30,11 +30,11 @@ class Login extends React.Component {
     });
   }
 
+  // Função de validação de email através de regEx tendo como base o link: https://www.w3resource.com/javascript/form/email-validation.php
+
   ValidateEmail(inputText) {
     const mailformat = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-    if (inputText.match(mailformat)) {
-      return true;
-    }
+    if (inputText.match(mailformat)) return true;
   }
 
   render() {
