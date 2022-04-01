@@ -48,10 +48,13 @@ class Wallet extends React.Component {
       const obj = {
         value: expense.value,
         curr: Number(expense.exchangeRates[currCode].ask),
+        name: expense.exchangeRates[currCode].name,
       };
       return obj;
     });
 
+    const names = filtered.map((el) => el.name);
+    const changes = filtered.map((el) => el.curr);
     const multiplied = filtered.map((el) => Number((el.value * el.curr).toFixed(2)));
     const reducer = (accumulator, curr) => accumulator + curr;
     const allValue = multiplied.reduce(reducer, 0);
@@ -148,6 +151,27 @@ class Wallet extends React.Component {
               <th>Editar/Excluir</th>
             </tr>
           </thead>
+          <tbody>
+            { expenses.map((exp, index) => (
+              <tr key={ exp.id }>
+                <td>{exp.description}</td>
+                <td>{exp.tag}</td>
+                <td>{exp.method}</td>
+                <td>{Number(exp.value).toFixed(2)}</td>
+                <td>{names[index].split('/', 1)}</td>
+                <td>{Number(changes[index]).toFixed(2)}</td>
+                <td>{multiplied[index]}</td>
+                <td>Real</td>
+                <td>
+                  <button type="button">
+                    Editar
+                  </button>
+                  <button type="button" data-testid="delete-btn">
+                    Excluir
+                  </button>
+                </td>
+              </tr>))}
+          </tbody>
         </table>
       </div>
     );
