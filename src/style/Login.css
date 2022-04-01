@@ -1,0 +1,20 @@
+body {
+  align-items: center;
+  background-color: aliceblue;
+  display: flex;
+  height: auto;
+  justify-content: center;
+  margin-top: 20%;
+  width: 100%;
+}
+
+.logo {
+  width: 20%;
+}
+
+.login-container {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+}

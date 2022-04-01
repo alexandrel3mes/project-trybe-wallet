@@ -2,7 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import '../style/Login.css';
 import { login } from '../actions';
+
+const logo = require('../logo512.png');
 
 class Login extends React.Component {
   constructor() {
@@ -41,9 +44,11 @@ class Login extends React.Component {
     const { email, password, enterBtnDisable } = this.state;
     const { logInDispatch } = this.props;
     return (
-      <div>
+      <div className="login-container">
+        <img className="logo" src={ logo } alt="Logo" />
         <input
           value={ email }
+          placeholder="Email:"
           name="email"
           type="email"
           data-testid="email-input"
@@ -52,6 +57,7 @@ class Login extends React.Component {
         <input
           value={ password }
           name="password"
+          placeholder="Senha:"
           type="password"
           data-testid="password-input"
           onChange={ this.handleChange }
