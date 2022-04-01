@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import '../style/Wallet.css';
 import { fetchCoins, fetchWhenAddExpenses, rmvExpense } from '../actions';
-import store from '../store/index';
 
 class Wallet extends React.Component {
   constructor() {
@@ -31,7 +31,6 @@ class Wallet extends React.Component {
   }
 
   handleEnd = () => {
-    console.log(store.getState().wallet.expenses);
     this.setState((prevState) => ({
       id: prevState.id + 1,
       value: 0,
@@ -55,18 +54,21 @@ class Wallet extends React.Component {
 
     const names = filtered.map((el) => el.name);
     const changes = filtered.map((el) => el.curr);
-    const multiplied = filtered.map((el) => Number((el.value * el.curr).toFixed(2)));
+    const multiplied = filtered.map((el) => Number((el.value * el.curr)));
     const reducer = (accumulator, curr) => accumulator + curr;
     const allValue = multiplied.reduce(reducer, 0);
 
     return (
       <div>
-        <header>
+        <header className="header">
           <h4 data-testid="email-field">{ `Email: ${email}` }</h4>
-          <p data-testid="total-field">
-            {`Despesa Geral: R$ ${allValue}`}
-          </p>
-          <p data-testid="header-currency-field">BRL</p>
+          <div className="value-box">
+            <span className="value-text">Valor total da despesa: </span>
+            <p data-testid="total-field">
+              {`${allValue.toFixed(2)}`}
+            </p>
+            <p data-testid="header-currency-field">BRL</p>
+          </div>
         </header>
 
         <form>
@@ -83,7 +85,7 @@ class Wallet extends React.Component {
           <label htmlFor="description">
             Descrição:
             <input
-              type="textarea"
+              type="text"
               data-testid="description-input"
               value={ description }
               name="description"
@@ -160,7 +162,7 @@ class Wallet extends React.Component {
                 <td>{Number(exp.value).toFixed(2)}</td>
                 <td>{names[index].split('/', 1)}</td>
                 <td>{Number(changes[index]).toFixed(2)}</td>
-                <td>{multiplied[index]}</td>
+                <td>{multiplied[index].toFixed(2)}</td>
                 <td>Real</td>
                 <td>
                   <button type="button">
@@ -169,7 +171,7 @@ class Wallet extends React.Component {
                   <button
                     type="button"
                     data-testid="delete-btn"
-                    onClick={ () => removeExp(index) }
+                    onClick={ () => removeExp(exp.id) }
                   >
                     Excluir
                   </button>

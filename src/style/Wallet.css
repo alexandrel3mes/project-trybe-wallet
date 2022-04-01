@@ -1,0 +1,14 @@
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.value-box {
+  align-items: center;
+  display: flex;
+}
+
+.value-text {
+  margin-right: 0.6em;
+}
