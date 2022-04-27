@@ -1,7 +1,14 @@
+body {
+  justify-content: center;
+}
+
 .header {
   align-items: center;
+  background-color: rgba(208, 228, 245, 0.2);
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.15);
   display: flex;
   justify-content: space-around;
+  padding: 20px;
 }
 
 .value-box {
@@ -12,3 +19,162 @@
 .value-text {
   margin-right: 0.6em;
 }
+
+.allContent {
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5%;
+  width: 1500px;
+}
+
+.walletForm {
+  background-color: rgba(208, 228, 245, 0.2);
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.headerWithForm {
+  background-color: rgba(208, 228, 245, 0.2);
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+}
+
+input {
+  border: none;
+  padding: 10px;
+}
+
+input:hover {
+  background-color: rgb(240, 240, 240);
+  border: none;
+}
+
+select {
+  background-color: white;
+  border: none;
+  max-width: 150px;
+  min-width: 150px;
+  padding: 10px;
+}
+
+.label {
+  margin-right: 10px;
+}
+
+select:hover {
+  background-color: rgb(240, 240, 240);
+  border: none;
+}
+
+option {
+  padding: 10px;
+}
+
+.formBtn {
+  max-width: 250px;
+  min-width: 250px;
+  padding: 10px;
+}
+
+.addBtn {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  display: inline-block;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  transition: 100ms;
+}
+
+.addBtn:hover {
+  background-color: #37803a;
+}
+
+.editBtn {
+  background-color: #afa04c;
+  border: none;
+  color: white;
+  display: inline-block;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  transition: 100ms;
+}
+
+.editBtn:hover {
+  background-color: #807539;
+}
+
+.removeBtn {
+  background-color: #af4c4c;
+  border: none;
+  color: white;
+  display: inline-block;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  transition: 100ms;
+}
+
+.removeBtn:hover {
+  background-color: #703030;
+}
+
+.tableBtn {
+  min-width: 100px;
+  padding: 10px;
+}
+
+
+table {
+  border-collapse: collapse;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.25);
+  height: 200px;
+  margin-top: 30px;
+  text-align: center;
+  width: 100%;
+}
+
+td {
+  transition: 500ms;
+}
+
+table td , table th {
+  border: 1px solid #aaa;
+  padding: 10px 0;
+}
+
+table tbody td {
+  font-size: 13px;
+}
+
+td:hover {
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.05);
+}
+
+table tr:nth-child( even ) {
+  background: rgba(208, 228, 245, 0.2);
+}
+
+table thead {
+  background: rgba(29, 116, 173, 0.1);
+}
+
+table thead th {
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+}
+
+table thead th:first-child {
+  border-left: none;
+}
+

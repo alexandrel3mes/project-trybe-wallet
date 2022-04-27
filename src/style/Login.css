@@ -1,20 +1,114 @@
-body {
-  align-items: center;
-  background-color: aliceblue;
-  display: flex;
-  height: auto;
-  justify-content: center;
-  margin-top: 20%;
-  width: 100%;
+* , *:before , *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.logo {
-  width: 20%;
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap') ;
+
+:root {
+
+  --pastel-pink: #e6a2a9ff;
+
+  --glaucous: #618abbff;
+
+  --glaucous-2: #6f89bcff;
+
+  --cool-grey: #8187baff;
+
+  --steel-blue: #4783b3ff;
+}
+
+/* ==== FADE IN UP === */
+
+@keyframes fadeInUp {
+
+  from {
+    opacity: 0;
+    transform: translate3d(0, 0, 100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+body {
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-name: fadeInUp;
+  background-image: url('https://images.unsplash.com/photo-1554034483-04fda0d3507b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2xlYXIlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fA%3D%3D&w=1000&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  font-family: Josefin Sans, sans-serif;
+  justify-content: center;
 }
 
 .login-container {
-  align-items: center;
+  background-color: rgba(189, 189, 189, 0.1);
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.2);
+  margin-top: 40%;
+  padding: 100px;
+}
+
+.form {
+  align-content: space-around;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.loginBtn {
+  background-color: white;
+  border-radius: 5px;
+  color: #080710;
+  cursor: pointer;
+  font-family: Josefin Sans, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 50px;
+  padding: 15px 0;
+  transition: 500ms;
+  width: 100%;
+}
+
+.loginBtn:hover {
+  background-color: #080710;
+  color: white;
+}
+
+.inputs {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-around;
+}
+
+.input {
+
+  /*   border-radius: 5px;
+  margin-top: 10px;
+  padding: 15px 5px; */
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 300;
+  height: 50px;
+  margin-top: 8px;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.input:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.title {
+  align-self: center;
+  font-size: xx-large;
+  margin-bottom: 50px;
+}
+
+.label {
+  margin-bottom: 20px;
 }
